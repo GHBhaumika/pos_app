@@ -1,6 +1,7 @@
-# pos_app
+# POS App
 
-A new Flutter project.
+A scalable Flutter-based Point of Sale system with offline-first support 
+and Firebase integration.
 
 ## Getting Started
 
