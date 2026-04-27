@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/utils/app_colors.dart';
+import '../../sales/views/home_screen.dart';
+import '../controllers/auth_controller.dart';
 import '../widgets/custom_login_button.dart';
 import '../widgets/custom_login_text_field.dart';
 import '../widgets/logo_widget.dart';
@@ -17,6 +19,16 @@ class _SignupScreenState extends State<SignupScreen> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController = TextEditingController();
+  final AuthController _authController = AuthController();
+
+  @override
+  void dispose() {
+    usernameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+    confirmPasswordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,8 +78,31 @@ class _SignupScreenState extends State<SignupScreen> {
 
                   CustomLoginButton(
                     text: "Sign Up",
-                    onPressed: () {
-                      // TODO: Add signup logic
+                    onPressed: () async {
+                      if (passwordController.text != confirmPasswordController.text) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text("Passwords do not match")),
+                        );
+                        return;
+                      }
+
+                      final result = await _authController.signUp(
+                        emailController.text.trim(),
+                        passwordController.text.trim(),
+                      );
+
+                      if (result == true) {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const HomeScreen(),
+                          ),
+                        );
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text(result.toString())),
+                        );
+                      }
                     },
                   ),
 
@@ -77,10 +112,22 @@ class _SignupScreenState extends State<SignupScreen> {
                     onTap: () {
                       Navigator.pop(context);
                     },
-                    child: Text(
-                      "Already have an account? Login",
-                      style: TextStyle(
-                        color: AppColors.textSecondary,
+                    child: RichText(
+                      text: TextSpan(
+                        text: "Already have an account? ",
+                        style: TextStyle(
+                          color: AppColors.textSecondary,
+                          fontSize: 14,
+                        ),
+                        children: [
+                          TextSpan(
+                            text: "Login",
+                            style: TextStyle(
+                              color: AppColors.primary,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   )
