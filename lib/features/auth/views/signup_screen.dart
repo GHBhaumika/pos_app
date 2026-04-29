@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
 import '../../../core/utils/app_colors.dart';
-import '../../sales/views/home_screen.dart';
+import '../../home/views/home_screen.dart';
 import '../controllers/auth_controller.dart';
 import '../widgets/custom_login_button.dart';
 import '../widgets/custom_login_text_field.dart';

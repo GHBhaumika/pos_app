@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pos_app/features/auth/views/signup_screen.dart';
-
 import '../../../core/utils/app_colors.dart';
+import '../../home/views/home_screen.dart';
 import '../controllers/auth_controller.dart';
 import '../widgets/custom_login_button.dart';
 import '../widgets/custom_login_text_field.dart';
 import '../widgets/logo_widget.dart';
-import '../../sales/views/home_screen.dart';
 
 class SigninScreen extends StatefulWidget {
   const SigninScreen({super.key});
