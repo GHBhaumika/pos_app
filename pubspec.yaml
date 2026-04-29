@@ -24,10 +24,18 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/
+    - assets/images/
+    - assets/fonts/
+
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter_Regular.ttf
+        - asset: assets/fonts/Inter_Bold.ttf
+        - asset: assets/fonts/Inter_Medium.ttf
 
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/appIcon.png"
+  image_path: "assets/images/appIcon.png"
   remove_alpha_ios: true

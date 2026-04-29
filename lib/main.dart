@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:pos_app/core/utils/app_colors.dart';
 import 'features/auth/views/splash_screen.dart';
 
 Future<void> main() async {
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
       title: 'POS App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        fontFamily: 'Inter',
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
       ),
       home: const SplashScreen(),
     );
