@@ -1,17 +1,71 @@
-# POS App
 
-A scalable Flutter-based Point of Sale system with offline-first support 
-and Firebase integration.
+# 🧾 POS App (Point of Sale System)
 
-## Getting Started
+A modern and efficient **Point of Sale (POS) application** built to simplify sales, inventory management, and billing processes. 
+This project is designed for small to medium businesses to manage daily transactions smoothly.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 🚀 Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- 🛒 Product management (add, update, delete products)
+- 💰 Sales and billing system
+- 👤 User-friendly interface
+- 📊 Simple reporting (sales summary)
+- 🔐 Secure and structured data handling
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## 🛠️ Tech Stack
+
+- Flutter
+- Dart
+- Local Database (Hive / SQLite)
+- Git & GitHub for version control
+
+
+---
+
+## 📱 Project Overview
+
+This POS system helps shop owners:
+- Quickly process customer purchases
+- Manage product data efficiently
+- Generate bills in real-time
+
+The goal is to minimize manual work and enhance business efficiency through automation and a more professional workflow.
+
+---
+
+## 📂 Project Structure
+
+
+pos_app/
+│
+├── lib/
+│ ├── core/
+│ ├── data/
+│ ├── features/
+│ └── routes/
+│ └── main.dart
+├── assets/
+├── test/
+└── pubspec.yaml
+
+
+---
+
+## ▶️ Getting Started
+
+1. Clone the repository:
+```bash
+git clone https://github.com/GHBhaumika/pos_app.git
+```
+## 2. Navigate to project:
+cd pos_app
+
+## 3. Install dependencies:
+flutter pub get
+
+## 4. Run the app:
+flutter run
