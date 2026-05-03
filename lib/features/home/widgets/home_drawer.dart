@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../core/utils/app_colors.dart';
 
 class HomeDrawer extends StatelessWidget {
@@ -10,14 +9,17 @@ class HomeDrawer extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: [
+          //drawer header
           DrawerHeader(
             decoration: BoxDecoration(color:AppColors.primary ),
             child: const Text("POS App", style: TextStyle(color: Colors.white)),
           ),
+          //my shop text
           const ListTile(
             leading: Icon(Icons.store),
             title: Text("My Shop"),
           ),
+          //settings text
           const ListTile(
             leading: Icon(Icons.settings),
             title: Text("Settings"),

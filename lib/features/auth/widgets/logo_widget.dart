@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../core/utils/app_colors.dart';
 
 class LogoWidget extends StatelessWidget {
@@ -9,12 +8,14 @@ class LogoWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        //app logo icon
         Icon(
           Icons.point_of_sale,
           size: 80,
           color: AppColors.primary,
         ),
         const SizedBox(height: 10),
+        //app logo text
         Text(
           "POS System",
           style: TextStyle(

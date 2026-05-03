@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../core/utils/app_colors.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -11,6 +10,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       iconTheme: const IconThemeData(
           color: AppColors.white
       ),
+      //app bar title
       title: const Text("Erosion",
       style: const TextStyle(
         fontFamily: 'Inter',
@@ -19,6 +19,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),),
       backgroundColor: AppColors.primary,
       actions: [
+        //notification icon
         IconButton(
           icon: const Icon(Icons.notifications,color: AppColors.white,),
           onPressed: () {},

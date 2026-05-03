@@ -18,6 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
     _navigateToNext();
   }
 
+  //page navigation for sign in screen with timer
   void _navigateToNext() {
     Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
@@ -34,6 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            //logo widget
             const LogoWidget(),
           ],
         ),

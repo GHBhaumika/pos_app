@@ -11,8 +11,10 @@ class CounterScreen extends StatelessWidget {
       padding: const EdgeInsets.all(12),
       child: Column(
         children: const [
+          //search bar
           SearchBarWidget(),
           SizedBox(height: 16),
+          //new sale card widget
           NewSaleCard(),
         ],
       ),

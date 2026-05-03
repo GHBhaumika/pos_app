@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import '../widgets/add_item_card.dart';
 import '../widgets/item_card.dart';
 import '../widgets/search_bar_widget.dart';
-import '../../../core/utils/app_colors.dart';
 
 class ItemsScreen extends StatelessWidget {
   const ItemsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // 🔹 Hardcoded items (for now)
+    //hardcoded items for card implementation
     final List<Map<String, dynamic>> items = [
       {"name": "Rice", "price": "Rs. 220"},
       {"name": "Sugar", "price": "Rs. 180"},
@@ -25,24 +24,25 @@ class ItemsScreen extends StatelessWidget {
           const SearchBarWidget(),
           const SizedBox(height: 16),
 
-          /// 🔥 Grid starts here
+          //items grid
           Expanded(
             child: GridView.builder(
-              itemCount: items.length + 1, // +1 for Add Item card
+              //add item card set up
+              itemCount: items.length + 1,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3, // 3 per row
+                //grid settings
+                crossAxisCount: 3,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
                 childAspectRatio: 0.9,
               ),
               itemBuilder: (context, index) {
-                // 👉 First card = Add Item
+                //add item card
                 if (index == 0) {
                   return const AddItemCard();
                 }
-
                 final item = items[index - 1];
-
+                //item card
                 return ItemCard(
                   name: item["name"],
                   price: item["price"],

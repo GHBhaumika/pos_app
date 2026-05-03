@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '../widgets/new_sale_card.dart';
-import '../widgets/search_bar_widget.dart';
 
 class MoreScreen extends StatelessWidget {
   const MoreScreen({super.key});
@@ -11,9 +9,6 @@ class MoreScreen extends StatelessWidget {
       padding: const EdgeInsets.all(12),
       child: Column(
         children: const [
-          SearchBarWidget(),
-          SizedBox(height: 16),
-
         ],
       ),
     );

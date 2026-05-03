@@ -17,8 +17,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  //bottom bar selected index
   int selectedIndex = 2; // default = Counter
-
+  // bottom bar navigation screen list
   final List<Widget> _screens = const [
     ReportsScreen(),
     TodayScreen(),
@@ -30,8 +31,11 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //app bar
       appBar: const HomeAppBar(),
+      //drawer
       drawer: const HomeDrawer(),
+      //bottom bar
       bottomNavigationBar: HomeBottomNav(
         currentIndex: selectedIndex,
         onTap: (index) {

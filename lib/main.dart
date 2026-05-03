@@ -4,6 +4,7 @@ import 'features/auth/views/splash_screen.dart';
 import '../../../core/utils/app_colors.dart';
 
 Future<void> main() async {
+  //flutter and firebase initialization
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MyApp());
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Inter',
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
       ),
+      //splash screen navigation
       home: const SplashScreen(),
     );
   }
