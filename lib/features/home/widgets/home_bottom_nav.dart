@@ -14,16 +14,14 @@ class HomeBottomNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      //bottom bar styles
       currentIndex: currentIndex,
       onTap: onTap,
       type: BottomNavigationBarType.fixed,
-
       backgroundColor: AppColors.white,
       elevation: 10,
-
       selectedItemColor: AppColors.primary,
       unselectedItemColor: AppColors.primary,
-
       selectedLabelStyle: const TextStyle(
         fontFamily: 'Inter',
         fontWeight: FontWeight.w600,
@@ -33,7 +31,7 @@ class HomeBottomNav extends StatelessWidget {
         fontFamily: 'Inter',
         fontSize: 13,
       ),
-
+      //bottom bar item list
       items: [
         _buildItem(Icons.bar_chart, "Reports", 0),
         _buildItem(Icons.today, "Today", 1),
@@ -44,10 +42,11 @@ class HomeBottomNav extends StatelessWidget {
     );
   }
 
+  //bottom bar build item custom widget
   BottomNavigationBarItem _buildItem(IconData icon, String label, int index) {
     final bool isSelected = currentIndex == index;
-
     return BottomNavigationBarItem(
+      //itm label
       label: label,
       icon: Container(
         padding: const EdgeInsets.all(8),
@@ -55,6 +54,7 @@ class HomeBottomNav extends StatelessWidget {
           color: isSelected ? AppColors.primary : AppColors.white,
           borderRadius: BorderRadius.circular(10),
         ),
+        //item icon
         child: Icon(
           icon,
           size: 30,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../core/utils/app_colors.dart';
 
 class ItemCard extends StatelessWidget {
@@ -30,9 +29,10 @@ class ItemCard extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          //card icon
           const Icon(Icons.inventory_2, size: 30),
           const SizedBox(height: 8),
-
+          //card item name
           Text(
             name,
             style: const TextStyle(
@@ -42,9 +42,8 @@ class ItemCard extends StatelessWidget {
             ),
             textAlign: TextAlign.center,
           ),
-
           const SizedBox(height: 4),
-
+          //card item price
           Text(
             price,
             style: const TextStyle(
