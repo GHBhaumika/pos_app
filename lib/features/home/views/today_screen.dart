@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/top_info_bar.dart';
+
 class TodayScreen extends StatelessWidget {
   const TodayScreen({super.key});
 
@@ -8,7 +10,9 @@ class TodayScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(12),
       child: Column(
-        children: const [
+        children: [
+          //top white bar
+          TopInfoBar(showBackButton: true),
         ],
       ),
     );

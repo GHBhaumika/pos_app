@@ -1,16 +1,28 @@
 import 'package:flutter/material.dart';
+import '../widgets/top_info_bar.dart';
 
 class ReportsScreen extends StatelessWidget {
   const ReportsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(12),
-      child: Column(
-        children: const [
-        ],
-      ),
+    return Column(
+      children: const [
+        SizedBox(height: 16),
+        //top white bar
+        TopInfoBar(showBackButton: true),
+        //other components
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.all(12),
+            child: Column(
+              children: [
+                // Your report content here
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
