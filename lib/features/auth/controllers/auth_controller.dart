@@ -4,6 +4,7 @@ import '../../../data/repositories/auth_repository.dart';
 class AuthController {
   final AuthRepository _repo = AuthRepository();
 
+  //sign in method calling
   Future signIn(String email, String password) async {
     try {
       await _repo.signIn(email, password);
@@ -26,6 +27,7 @@ class AuthController {
     }
   }
 
+  //sign up method calling
   Future signUp(String email, String password) async {
     try {
       await _repo.signUp(email, password);
@@ -39,6 +41,15 @@ class AuthController {
         default:
           return "Signup failed";
       }
+    }
+  }
+
+  //sign out method calling
+  Future<void> signOut() async {
+    try {
+      await _repo.signOut();
+    } catch (e) {
+      throw Exception("Logout failed");
     }
   }
 }

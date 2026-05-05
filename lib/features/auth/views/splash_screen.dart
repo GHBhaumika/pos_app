@@ -2,6 +2,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import '../../auth/views/signin_screen.dart';
 import '../widgets/logo_widget.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import '../../home/views/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,17 +17,24 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    _navigateToNext();
+    _checkUser();
   }
 
-  //page navigation for sign in screen with timer
-  void _navigateToNext() {
-    Timer(const Duration(seconds: 3), () {
+  //page navigation for sign in screen with checking user
+  void _checkUser() async {
+    await Future.delayed(const Duration(seconds: 2));
+    final user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (_) => const HomeScreen()),
+      );
+    } else {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (_) => const SigninScreen()),
       );
-    });
+    }
   }
 
   @override
