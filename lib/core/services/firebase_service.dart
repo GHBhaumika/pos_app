@@ -5,6 +5,7 @@ class FirebaseService {
 
   User? get currentUser => _auth.currentUser;
 
+  //firebase sign up method
   Future<UserCredential> signUp(String email, String password) {
     return _auth.createUserWithEmailAndPassword(
       email: email,
@@ -12,6 +13,7 @@ class FirebaseService {
     );
   }
 
+  //firebase sign in method
   Future<UserCredential> signIn(String email, String password) {
     return _auth.signInWithEmailAndPassword(
       email: email,
@@ -19,6 +21,7 @@ class FirebaseService {
     );
   }
 
+  //firebase sign out method
   Future<void> signOut() {
     return _auth.signOut();
   }

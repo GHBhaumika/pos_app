@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../widgets/top_info_bar.dart';
 
 class TodayScreen extends StatelessWidget {
@@ -7,14 +6,24 @@ class TodayScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(12),
-      child: Column(
+    return Column(
         children: [
-          //top white bar
-          TopInfoBar(showBackButton: true),
-        ],
+      SizedBox(height: 16),
+      //top white bar
+      TopInfoBar(showBackButton: true),
+      //other components
+      Expanded(
+        child: Padding(
+          padding: EdgeInsets.all(12),
+          child: Column(
+            children: [
+              // Your report content here
+            ],
+          ),
+        ),
       ),
-    );
+        ],
+      );
+
   }
 }
