@@ -1,0 +1,72 @@
+import 'package:flutter/material.dart';
+import '../../../core/utils/app_colors.dart';
+import 'custom_form_text_field.dart';
+
+class AddCategoryDialog extends StatelessWidget {
+  const AddCategoryDialog({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 1,
+
+        leading: IconButton(
+          icon: const Icon(Icons.close,color: AppColors.primary),
+          onPressed: (){
+            Navigator.pop(context);
+          },
+        ),
+
+        title: const Text(
+          "ADD CATEGORY",
+          style: TextStyle(
+            color: AppColors.primary,
+            fontFamily: "Inter",
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        actions: [
+          IconButton(
+            onPressed: (){},
+            icon: const Icon(
+              Icons.favorite_border,
+              color: Colors.green,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right:12),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green,
+              ),
+              onPressed: (){
+              },
+
+              child: const Text(
+                "SAVE",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontFamily: "Inter",
+                ),
+              ),
+
+            ),
+          )
+
+        ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: CustomFormTextField(
+          label: "Category Name",
+          hint: "Ex: Beverages",
+          controller: TextEditingController(),
+        ),
+      ),
+
+    );
+  }
+}
